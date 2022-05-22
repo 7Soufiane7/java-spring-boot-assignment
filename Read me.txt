@@ -131,6 +131,12 @@ _______________________________________________________ 12) Delete specific user
 Delete , http://localhost:8087/manageUserPermissions/deleteUser/{id}}
 
 
+#################################################### Things I would have added if I had more time #######################################################
+
+Unfortunately, I had a lot of things to do during the weekend, therefore, I wouldn't add all the functionalities I wanted to the application.
+If I had more time I would have finished adding tests for all functionalities of the application
+If I had more time I would have added more exception handling functionalities such as checking the connection to the database.
+
 
 
 
