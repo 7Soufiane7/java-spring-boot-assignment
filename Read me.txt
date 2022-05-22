@@ -1,0 +1,140 @@
+################################################################# Introduction #################################################################
+
+This application was created by Soufiane Elhagani as requested by the hiring team of Mistral.
+As requested, this is a spring boot application that contains the backend implimentation of the user management application
+
+
+####################################################### How to set up the application ############################################################
+
+In this application I used Spring boot and MySql database.
+To set up the application follow these steps:
+
+1) Go to the application.properties file and change these variables with the variables you will use to connect to MySql
+
+spring.datasource.url
+spring.datasource.username
+spring.datasource.password 
+
+Ps:  This application runs on port 8087 but you can change it if you want
+
+
+#################################################### The functionalities of the application #######################################################
+
+
+_______________________________________________________ 1) Add permission  _________________________________________________________
+
+Post , http://localhost:8087/addPermission inside the body use this json:
+{
+    "code":"code",
+    "description":"description"
+}
+
+_______________________________________________________ 2) Add permissions  _________________________________________________________
+
+Post , http://localhost:8087/addPermissions inside the body use this json:
+[
+    {
+    "code":"code1",
+    "description":"description1"
+    },
+    {
+    "code":"code2",
+    "description":"description2"
+    },
+    {
+    "code":"code2",
+    "description":"description2"
+    }
+  
+]
+
+_______________________________________________________ 3) Delete a permission  _________________________________________________________
+
+Delete , http://localhost:8087/deletePermission/{id}
+
+_______________________________________________________ 4) Add a user  _________________________________________________________
+
+Post , http://localhost:8087/addUser inside the body use this json:
+
+{
+    "firstName":"firstName",
+    "lastName":"lastName",
+    "userName":"userName",
+    "passWord":"passWord",
+    "email":"email",
+    "status":"status"
+}
+
+_______________________________________________________ 5) Add a users  _________________________________________________________
+
+Post , http://localhost:8087/addUsers inside the body use this json:
+
+[
+    {
+    "firstName":"firstName1",
+    "lastName":"lastName1",
+    "userName":"userName1",
+    "passWord":"passWord1",
+    "email":"email1",
+    "status":"status1"
+    },
+    {
+    "firstName":"firstName2",
+    "lastName":"lastName2",
+    "userName":"userName2",
+    "passWord":"passWord2",
+    "email":"email2",
+    "status":"status2"
+    },
+    {
+    "firstName":"firstName3",
+    "lastName":"lastName3",
+    "userName":"userName3",
+    "passWord":"passWord3",
+    "email":"email3",
+    "status":"status3"
+    }
+]
+
+_______________________________________________________ 6) get users without ordering them _________________________________________________________
+
+Get , http://localhost:8087/getUsers
+
+_______________________________________________________ 7) get users with order _________________________________________________________
+
+Get , http://localhost:8087/getUsers/{order}
+
+order can take many values: firstNameAsc, firstNameDes, lastNameAsc, lastNameDes,userNameAsc, userNameDes,emailAsc, emailDes
+
+_______________________________________________________ 8) get users using filters _________________________________________________________
+
+Get , http://localhost:8087/getUsers/{filter}/{value}
+
+
+order can take many values: firstName, lastName, userName, email
+
+
+_______________________________________________________ 9) get user by id _________________________________________________________
+
+Get , http://localhost:8087/getUser/{id}
+
+_______________________________________________________ 10) update user _________________________________________________________
+
+Put , http://localhost:8087/updateUser inside the body use the user with updates
+
+_______________________________________________________ 11) manage user's permissions _________________________________________________________
+
+Put , http://localhost:8087/manageUserPermissions/{id} inside the body use the permissions u want for example:
+
+_______________________________________________________ 12) Delete specific user _________________________________________________________
+
+Delete , http://localhost:8087/manageUserPermissions/deleteUser/{id}}
+
+
+
+
+
+
+
+
+
